@@ -1,0 +1,42 @@
+[command]
+;prefix =
+;suffix =
+iptables_bin = /sbin/iptables
+iptables_rm = /root/travaux/remove_iptables.sh
+iptables_rm_alt = /root/travaux/utils/remove_iptables.sh
+local_server = my.primary.server
+mail = tech@example.com
+; time : in hour
+time = 6
+
+[port]
+ftp = 21
+ssh = 22
+web = 80
+xmlrpc = 8069
+netrpc = 8070
+
+
+[server]
+server1 = example.com
+server2 = example.org
+server3 = example.fr
+
+
+[user]
+user1 = password1
+user2 = password2
+user3 = password3
+
+
+[right]
+; user1 can access to all servers with SSH and FTP
+user1[] = all:ssh
+user1[] = all:ftp
+
+; user2 can access to server1 and server2 with SSH
+user2[] = server1:ssh
+user2[] = server2:ssh
+
+; user3 can access to server3 with XML-RPC
+user3[] = server3:xmlrpc
