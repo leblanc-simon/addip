@@ -1,7 +1,6 @@
 <?php
 
-require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'Config.php';
-require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'Log.php';
+namespace AddIp;
 
 class Cli
 {
@@ -28,7 +27,7 @@ class Cli
             }
 
             self::exitApp('success');
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             Log::logError('cli', '-', $e->getMessage());
             self::exitApp('exception');
         }
@@ -58,7 +57,7 @@ class Cli
         $ip = $args[2];
 
         if (preg_match('/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/', $ip) == false) {
-            throw new Exception('bad format of IP');
+            throw new \Exception('bad format of IP');
         }
         self::$ip = $ip;
 

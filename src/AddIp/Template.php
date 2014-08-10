@@ -1,5 +1,7 @@
 <?php
 
+namespace AddIp;
+
 class Template
 {
     private $username = null;

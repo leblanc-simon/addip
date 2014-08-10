@@ -1,5 +1,7 @@
 <?php
 
+namespace AddIp;
+
 class Config
 {
     private $filename = null;
@@ -25,18 +27,18 @@ class Config
     /**
      * Load the configuration
      *
-     * @throws Exception    if the filename is not defined
-     * @throws Exception    if an error occured while parsing the filename
+     * @throws \Exception    if the filename is not defined
+     * @throws \Exception    if an error occured while parsing the filename
      */
     public function load()
     {
         if (null === $this->filename) {
-            throw new Exception('You must define filename before load the configuration');
+            throw new \Exception('You must define filename before load the configuration');
         }
 
         $ini = parse_ini_file($this->filename, true);
         if (false === $ini) {
-            throw new Exception('Impossible to parse the file '.$this->filename);
+            throw new \Exception('Impossible to parse the file '.$this->filename);
         }
 
         $this->loadCommands($ini);
@@ -195,11 +197,11 @@ class Config
             foreach ($rights as $right) {
                 list($server, $port) = explode(':', $right);
                 if (empty($server) === true || empty($port) === true) {
-                    throw new Exception('impossible to parse line '.$right);
+                    throw new \Exception('impossible to parse line '.$right);
                 }
 
                 if (isset($this->ports[$port]) === false) {
-                    throw new Exception('impossible to find port '.$port);
+                    throw new \Exception('impossible to find port '.$port);
                 }
 
                 // all is a keyword for all servers
@@ -212,7 +214,7 @@ class Config
                     }
                 } else {
                     if (isset($this->servers[$server]) === false) {
-                        throw new Exception('impossible to find server '.$server);
+                        throw new \Exception('impossible to find server '.$server);
                     }
 
                     $this->rights[$user][] = array(
@@ -251,12 +253,12 @@ class Config
      * Init the filename to use to get the configuration
      *
      * @param $filename
-     * @throws Exception   if the filename doesn't exist
+     * @throws \Exception   if the filename doesn't exist
      */
     private function setFilename($filename)
     {
         if (file_exists($filename) === false) {
-            throw new Exception($filename.' doesn\'t exist');
+            throw new \Exception($filename.' doesn\'t exist');
         }
 
         $this->filename = $filename;

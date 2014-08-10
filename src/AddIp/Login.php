@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'Log.php';
+namespace AddIp;
 
 class Login
 {
@@ -47,13 +47,13 @@ class Login
     /**
      * Check if the login is valid
      *
-     * @throws  Exception   If the configuration is not initialize
+     * @throws  \Exception   If the configuration is not initialize
      * @return  bool        True if the login / password is valid, false else
      */
     public function check()
     {
         if (null === $this->config) {
-            throw new Exception('config must be initialize');
+            throw new \Exception('config must be initialize');
         }
 
         if (null === $this->username || null === $this->ip) {

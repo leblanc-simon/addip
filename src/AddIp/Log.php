@@ -1,5 +1,7 @@
 <?php
 
+namespace AddIp;
+
 class Log
 {
     static public function logSuccess($username, $ip, $message)

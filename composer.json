@@ -1,0 +1,25 @@
+{
+    "name": "leblanc-simon/addip",
+    "description": "Application to allow some IP in some port",
+    "version": "1.0.0",
+    "homepage": "http://github.com/leblanc-simon/addip",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Leblanc",
+            "email": "contact@leblanc-simon.eu",
+            "homepage": "http://www.leblanc-simon.fr",
+            "role": "Developer"
+        }
+    ],
+
+    "type": "application",
+
+    "autoload": {
+        "psr-4": {
+            "AddIp\\": "src/AddIp/"
+        }
+    },
+
+    "minimum-stability": "stable"
+}

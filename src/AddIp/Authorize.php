@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'Log.php';
+namespace AddIp;
 
 class Authorize
 {
@@ -34,12 +34,12 @@ class Authorize
      * Authorize the access for the user
      *
      * @return array|bool   true if it's ok, array(command, output) else
-     * @throws Exception    if the configuration isn't initialize
+     * @throws \Exception    if the configuration isn't initialize
      */
     public function authorizeAccess()
     {
         if ($this->config === null) {
-            throw new Exception('config must be initialize');
+            throw new \Exception('config must be initialize');
         }
 
         $rights = $this->config->getRights($this->username);

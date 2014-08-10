@@ -1,5 +1,5 @@
 <?php
 
-require_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'AddIp'.DIRECTORY_SEPARATOR.'Application.php';
+require_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 
-Application::run();
+\AddIp\Application::run();

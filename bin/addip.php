@@ -1,6 +1,6 @@
 #!/usr/local/bin/php5
 <?php
 
-require_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'AddIp'.DIRECTORY_SEPARATOR.'Cli.php';
+require_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 
-Cli::run($argv);
+\AddIp\Cli::run($argv);
