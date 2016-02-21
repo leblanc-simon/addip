@@ -1,7 +1,6 @@
 {
     "name": "leblanc-simon/addip",
     "description": "Application to allow some IP in some port",
-    "version": "1.0.0",
     "homepage": "http://github.com/leblanc-simon/addip",
     "license": "MIT",
     "authors": [

@@ -56,7 +56,7 @@ class Cli
         $servers = $args[1];
         $ip = $args[2];
 
-        if (preg_match('/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/', $ip) == false) {
+        if (preg_match('/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/', $ip) === 0) {
             throw new \Exception('bad format of IP');
         }
         self::$ip = $ip;
